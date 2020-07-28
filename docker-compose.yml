@@ -1,0 +1,68 @@
+version: '3.7'
+
+services:
+  postgres:
+    restart: on-failure
+    image: postgres:10.6
+    environment:
+      # DATABASE_HOST: $DATABASE_HOST
+      POSTGRES_USER: $DATABASE_USER
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
+    ports:
+      - 5432:5432
+    container_name: helios_postgres
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+  backend: &backend
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/django/Dockerfile
+    image: helios/backend
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+      - rabbitmq
+      - celery_worker
+      - nginx
+    container_name: helios_backend
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DJANGO_SETTINGS_MODULE=settings
+    # command: gunicorn wsgi:application --bind 0.0.0.0:8000 --workers 3
+    entrypoint:
+      - /django-entrypoint-prod.sh
+  backend_dev:
+    <<: *backend
+    container_name: helios_backend_dev
+    entrypoint:
+      - /django-entrypoint-dev.sh
+    environment:
+      - DJANGO_SETTINGS_MODULE=settings
+  rabbitmq:
+    image: rabbitmq:3.7-alpine
+  celery_worker:
+    <<: *backend
+    ports: []
+    depends_on:
+      - postgres
+      - rabbitmq
+    entrypoint: /celery-entrypoint.sh
+    container_name: helios_celery
+  nginx:
+    restart: on-failure
+    build:
+      context: docker/nginx
+      dockerfile: Dockerfile
+    container_name: portas_front_nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./certs:/etc/nginx/certs
+      - .:/code
+    network_mode: "host"
+volumes:
+  postgresdata:
