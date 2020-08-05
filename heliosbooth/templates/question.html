@@ -24,12 +24,15 @@ as many as you approve of
 </span>
 </p>
 
+<div class="row answer_group_container">
+{#if $T.question.answers[$T.answer_ordering[0]].includes(':') }<div class="col
+ answer_group">{#/if}
 {#foreach $T.question.answers as answer}
+{#if $T.question.answers[$T.answer_ordering[$T.answer$index]].includes(':') && $T.answer$index > 0}</div><div class="col answer_group">{#/if}
 <div id="answer_label_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}">
   <input type="checkbox" class="ballot_answer" id="answer_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}" name="answer_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}" value="yes" onclick="BOOTH.click_checkbox({$T.question_num}, {$T.answer_ordering[$T.answer$index]}, this.checked);" />
-
   <label class="answer" for="answer_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}">
-    {$T.question.answers[$T.answer_ordering[$T.answer$index]]}
+    {$T.question.answers[$T.answer_ordering[$T.answer$index]].replaceAll(';','<br/>&nbsp;&nbsp;-&nbsp;')}
 
     {#if $T.question.answer_urls && $T.question.answer_urls[$T.answer_ordering[$T.answer$index]] && $T.question.answer_urls[$T.answer_ordering[$T.answer$index]] != ""}
       &nbsp;&nbsp;
@@ -40,6 +43,9 @@ as many as you approve of
   </label>
 </div>
 {#/for}
+{#if $T.question.answers[$T.answer_ordering[0]].includes(':')}</div>{#/if}
+</div>
+</div>
 
 <div id="warning_box" style="color: green; text-align:center; font-size: 0.8em; padding-top:10px; padding-bottom: 10px; height:50px;">
 </div>
