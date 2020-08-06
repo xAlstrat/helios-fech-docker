@@ -32,7 +32,7 @@ as many as you approve of
 <div id="answer_label_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}">
   <input type="checkbox" class="ballot_answer" id="answer_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}" name="answer_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}" value="yes" onclick="BOOTH.click_checkbox({$T.question_num}, {$T.answer_ordering[$T.answer$index]}, this.checked);" />
   <label class="answer" for="answer_{$T.question_num}_{$T.answer_ordering[$T.answer$index]}">
-    {$T.question.answers[$T.answer_ordering[$T.answer$index]].replaceAll(';','<br/>&nbsp;&nbsp;-&nbsp;')}
+    {$T.question.answers[$T.answer_ordering[$T.answer$index]].replace('/;/g','<br/>&nbsp;&nbsp;-&nbsp;')}
 
     {#if $T.question.answer_urls && $T.question.answer_urls[$T.answer_ordering[$T.answer$index]] && $T.question.answer_urls[$T.answer_ordering[$T.answer$index]] != ""}
       &nbsp;&nbsp;
