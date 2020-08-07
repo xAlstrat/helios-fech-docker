@@ -1,0 +1,133 @@
+/*@font-face {
+  font-family: 'iceland';
+  src: local('Iceland'),
+       url('/static/main/fonts/Iceland/Iceland-Regular.ttf') format("truetype");
+}*/
+
+body {
+    font-family: sans-serif;
+}
+
+#wrapper {
+    border: 3px solid #280549 !important;
+    position: initial !important;
+}
+
+#logo-container {
+    margin-left: 100px !important;
+    width: 1000px;
+    text-align: center;
+}
+
+#logo-container img{
+    height: 100px;
+}
+
+#banner{
+    border: none !important;
+    background-color: #280549 !important;
+    color: white !important;
+    font-size: 30px !important;
+    line-height: 46px !important;
+}
+
+#wrapper > span > a {
+    color: white !important;
+}
+
+#content{
+    border: none !important;
+}
+
+#content button, #content input[type=button]{
+    font-size: 20px;
+    border: none !important;
+    padding: 10px 30px !important;;
+    min-width: 200px;
+    color: white !important;
+    background-color: #280549 !important;
+    text-transform: uppercase !important;
+}
+
+#content button.btn-small, #content input.btn-small[type=button]{
+    font-size: 14px !important;
+    padding: 5px 10px !important;
+}
+
+#footer{
+    background-color: #CCCCCC !important;
+    color: #280549 !important;
+    font-weight: 600 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    border: none !important;
+}
+
+
+/*Voting*/
+
+#progress_div td{
+    color: white !important;
+    background-color: #280549 !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    border: none !important;
+}
+
+#progress_div td.selected{
+    color: #280549 !important;
+    background-color: #CCCCCC !important;
+}
+
+#question_div {
+    color: #280549 !important;
+}
+
+#question_div .question_title_container{
+    display: flex;
+    align-items: flex-end;
+}
+
+#question_div .question_title_container .question_title_helper{
+    flex-grow: 1;
+    border-bottom: 2px solid #280549 !important;
+}
+
+#question_div .question_title {
+    padding: 5px 15px;
+    border-top: 2px solid #280549 !important;
+    border-left: 2px solid #280549 !important;
+    border-right: 2px solid #280549 !important;
+}
+
+
+
+#question_div div[id*=answer_label] {
+    display: flex;
+    align-items: center;
+}
+
+#question_div div[id*=answer_label].selected input[type=checkbox].ballot_answer{
+    background-color: #280549 !important;
+}
+
+#question_div input[type=checkbox].ballot_answer{
+    border: 2px solid #280549 !important;
+    padding: 7px !important;
+    -webkit-appearance: none;
+}
+
+#encrypting_div, #seal_div{
+    color: #280549 !important;
+}
+
+#seal_div .question_answer_container{
+    display: flex;
+    align-items: center;
+}
+
+#seal_div .question_answer_container .checkbox-label{
+    border: 2px solid #280549 !important;
+    background-color: #280549 !important;
+    padding: 7px !important;
+}

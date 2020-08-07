@@ -1,20 +1,3 @@
-
-{#if $T.election_metadata.use_advanced_audit_features}
-<div style="float: right; background: lightyellow; margin-left: 20px; padding: 0px 10px 10px 10px; border: 1px solid #ddd; width:200px;">
-<h4><a onclick="$('#auditbody').slideToggle(250);" href="#">Audit</a> <span style="font-size: 0.8em; color: #444">[optional]</span></h4>
-<div id="auditbody" style="display:none;">
-<p>
-If you choose, you can audit your ballot and reveal how your choices were encrypted.
-</p>
-<p>
-You will then be guided to re-encrypt your choices for final casting.
-</p>
-<input type="button" value="Verify Encryption" onclick="BOOTH.audit_ballot();" class="pretty" />
-</p>
-</div>
-</div>
-{#/if}
-
 <h3>Review your Ballot</h3>
 
 
@@ -31,10 +14,26 @@ You will then be guided to re-encrypt your choices for final casting.
 {#if $T.choices[$T.question$index].length < $T.question.max}
 [you selected {$T.choices[$T.question$index].length} candidates; you may select from {$T.question.min} to {$T.question.max}]
 {#/if}
-[<a onclick="BOOTH.show_question({$T.question$index}); return false;" href="#">edit responses</a>]
+<br/>
+    <input type="button" class="btn-small" onclick="BOOTH.show_question({$T.question$index}); return false;" href="#" value="Editar respuesta"></input>
 {#if !$T.question$last}<br><br>{#/if}
 {#/for}
 </div>
+{#if $T.election_metadata.use_advanced_audit_features}
+<div style="background: #CCCCCC;padding: 10px 10px 10px 10px; border: 1px solid #ddd; width:400px;">
+<a onclick="$('#auditbody').slideToggle(250);" href="#"><input type="button" class="btn-small" value="Auditar" /></a>
+<div id="auditbody" style="display:none;">
+<p>
+If you choose, you can audit your ballot and reveal how your choices were encrypted.
+</p>
+<p>
+You will then be guided to re-encrypt your choices for final casting.
+</p>
+<input type="button" value="Verificar" onclick="BOOTH.audit_ballot();" class="pretty btn-small" />
+</p>
+</div>
+</div>
+{#/if}
 
 
 <p><p>Your ballot tracker is <b><tt style="font-size: 11pt;">{$T.encrypted_vote_hash}</tt></b>, and you can <a onclick="BOOTH.show_receipt(); return false;" href="#">print</a> it.<br /><br /></p>
