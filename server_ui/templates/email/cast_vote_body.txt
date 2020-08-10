@@ -1,14 +1,14 @@
-Dear {{voter.name}},
+Estimado/a {{voter.name}},
 
-You have successfully cast a vote in {{election.name}}.
+Has emitido tu voto a {{election.name}} satisfactoriamente.
 
-Your ballot is archived at: {{cast_vote_url}}
+Tu papeleta está archivada en: {{cast_vote_url}}
 
 {% if election.use_voter_aliases %}
-This election uses voter aliases to protect your privacy.
-Your voter alias is: {{voter.alias}}.
+Esta elección utiliza el alias del votante para proteger su privacidad.
+Tu nombre de alias es: {{voter.alias}}.
 {% endif %}
 
 --
-
+Elecciones FECh 2020
 Helios
