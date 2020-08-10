@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'sans-pro-bold';
+  src: local('SansProBold'),
+       url('../font/SourceSansPro-Bold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'sans-pro';
+  src: local('SansPro'),
+       url('../font/SourceSansPro-SemiBold.ttf') format("truetype");
+}
+
+body {
+    font-family: sans-pro !important;
+    color: #280549 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-pro-bold !important;
+    color: #280549 !important;
+}
+
+#contentbody{
+    margin-top: 10px !important;
+    padding: 20px !important;
+    border: 2px solid #280549 !important;
+}
+
+#wrapper {
+    border: 3px solid #280549 !important;
+    position: initial !important;
+}
+
+.top-bar{
+    background-color: #280549 !important;
+}
+
+.top-bar a, .top-bar-section a{
+    background-color: #280549 !important;
+}
+
+.top-bar .divider{
+    border-left: 1px solid #2b2b2b !important;
+    border-right: none !important;
+}
+
+#wrapper > span > a {
+    color: white !important;
+}
+
+#content{
+    border: none !important;
+}
+
+button, input[type=button], a.button, input[type=submit]{
+    font-size: 20px;
+    border: none !important;
+    padding: 10px 30px !important;;
+    min-width: 200px;
+    color: white !important;
+    background-color: #280549 !important;
+    text-transform: uppercase !important;
+    font-family: sans-pro !important;
+}
+
+button.btn-small, input.btn-small[type=button], a.button.btn-small, input.btn-small[type=submit]{
+    font-size: 14px !important;
+    padding: 5px 10px !important;
+}
+
+button.tiny, input.tiny[type=button], a.button.tiny, input.tiny[type=submit]{
+    font-size: 12px !important;
+    padding: 5px 10px !important;
+    min-width: 100px;
+}
+
+form table{
+    margin: auto;
+    padding: 15px 50px;
+}
+
+form table, form table tr {
+    background-color: #280549 !important;
+}
+
+form table td {
+    border: none !important;
+}
+
+form table label {
+    color: white !important;
+    font-size: 20px;
+}
+
+#footer{
+    background-color: #CCCCCC !important;
+    color: #280549 !important;
+    font-weight: 600 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    border: none !important;
+}
+
+.submit {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 10px;
+    display: block;
+}
+

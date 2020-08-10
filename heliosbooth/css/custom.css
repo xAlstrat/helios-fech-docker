@@ -1,11 +1,28 @@
-/*@font-face {
-  font-family: 'iceland';
-  src: local('Iceland'),
-       url('/static/main/fonts/Iceland/Iceland-Regular.ttf') format("truetype");
-}*/
+@font-face {
+  font-family: 'sans-pro-bold';
+  src: local('SansProBold'),
+       url('../font/SourceSansPro-Bold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'sans-pro';
+  src: local('SansPro'),
+       url('../font/SourceSansPro-SemiBold.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'sans-pro-reg';
+  src: local('SansProRegular'),
+       url('../font/SourceSansPro-Regular.ttf') format("truetype");
+}
 
 body {
-    font-family: sans-serif;
+    font-family: sans-pro !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-pro-bold !important;
+    color: #280549 !important;
 }
 
 #wrapper {
@@ -47,6 +64,7 @@ body {
     color: white !important;
     background-color: #280549 !important;
     text-transform: uppercase !important;
+    font-family: sans-pro !important;
 }
 
 #content button.btn-small, #content input.btn-small[type=button]{
@@ -105,6 +123,7 @@ body {
 #question_div div[id*=answer_label] {
     display: flex;
     align-items: center;
+    font-family: sans-pro-reg !important;
 }
 
 #question_div div[id*=answer_label].selected input[type=checkbox].ballot_answer{
