@@ -4,6 +4,7 @@
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" /> 
   <title>Helios Voting System</title>
   <link rel="stylesheet" type="text/css" href="css/booth.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css" />
   <link rel="stylesheet" type="text/css" href="css/forms.css" />
   <script language="javascript" src="js/jscrypto/jsbn.js"></script>
   <script language="javascript" src="js/jscrypto/jsbn2.js"></script>
@@ -54,11 +55,11 @@ function result_append(str) {
 function verify_single_ballot(election_url, audit_trail) {
   var encrypted_vote_json = jQuery.secureEvalJSON(audit_trail);
   
-  result_append("loading election...");
+  result_append("cargando elección...");
 
   // quick and dirty detection of cast ballot
   if (encrypted_vote_json['cast_at']) {
-    result_append("\n\nIt looks like you are trying to verify a cast ballot. That can't be done, only audited ballots can be verified.");
+    result_append("\n\nParece que estás intentando verificar un voto emitido. Eso no se puede realizar, solo votos auditados pueden ser verificados.");
     return;
   }
   
@@ -70,9 +71,9 @@ function verify_single_ballot(election_url, audit_trail) {
     $('#loading').hide();
     
     if (overall_result) {
-       result_append('SUCCESSFUL VERIFICATION, DONE!');
+       result_append('¡VERIFICACIÓN SATISFACTORIA!');
     } else {
-       result_append('PROBLEM - THIS BALLOT DOES NOT VERIFY.');        
+       result_append('ERROR - NO SE PUDO VERIFICAR ESTA PAPELETA.');
     }
   };
 
@@ -97,11 +98,11 @@ function verify_single_ballot(election_url, audit_trail) {
       after_computation(overall_result);
     }
   }, error: function() {
-      result_append('PROBLEM LOADING election. Are you sure you have the right election URL?<br />');
+      result_append('PROBLEMA AL CARGAR LA ELECCIÓN. Estás seguro que estás utilizando una URL correcta de la elección?<br />');
 
       $('#loading').hide();
       
-      result_append('PROBLEM - THIS BALLOT DOES NOT VERIFY.');        
+      result_append('ERROR - NO SE PUDO VERIFICAR ESTA PAPELETA.');
   }
   });
 }
@@ -111,12 +112,12 @@ function verify_single_ballot(election_url, audit_trail) {
 <body>
 <div id="wrapper">
 <div id="banner">
-    Helios Single-Ballot Verifier
+    Verificador del Voto de Helios
 </div>
 <div id="content">
 
 <div id="verifier_loading">
-Loading verifier...
+Cargando verificador...
 </div>
 
 <div id="dummy_bigint" style="display:none;">
@@ -126,20 +127,20 @@ At this time, the Java plugin is required for browser-based ballot auditing, alt
 
 <div id="verifier" style="display:none;">
 <p style="font-size: 16pt;">
-    This single-ballot verifier lets you enter an audited ballot<br />and verify that it was prepared correctly.
+    Este verificador te permite ingresar votos auditados<br />y verificar que fueron preparados correctamente.
 </p>
 
 <form onsubmit="try {verify_single_ballot(this.election_url.value, this.audit_trail.value);} catch (e) {E = e;} return false;">
-Enter the Election URL:
+Ingresa la URL de la Elección:
     <input type="text" size="50" name="election_url" id="election_url" /><br />
 
 <p>
-Your Ballot:
+Información de tu voto auditado:
 </p>
 
 <textarea name="audit_trail" cols="80" rows="7">
 </textarea><br /><br />
-<input type="submit" class="pretty" value="Verify" />
+<input type="submit" class="pretty button" value="Verificar" />
 </form>
 
 <br /><br />

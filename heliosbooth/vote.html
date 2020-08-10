@@ -596,12 +596,12 @@ BOOTH.do_done = function() {
 <div id="page">
   <div id="progress_div" style="display:none; width: 500px; margin:auto;">
       <table width="100%">
-          <tr><td id="progress_1">(1) Select</td><td id="progress_2">(2) Review</td><td id="progress_3">(3) Submit</td></tr>
+          <tr><td id="progress_1">PAPELETAS</td><td id="progress_2">REVISIÓN</td><td id="progress_3">ENVIAR</td></tr>
       </table>
   </div>
   <div id="election_div" class="panel">
-    <h3>Checking capabilities and loading election booth...</h3>
-    <div align="center"><img src="loading.gif" /><br />This may take up to 10 seconds</div>
+    <h3>Revisando capacidad para votar y obteniendo la papeleta de la elección...</h3>
+    <div align="center"><img src="loading.gif" /><br />Esto puede tardar unos segundos.</div>
   </div>
 
   <div id="error_div" class="panel" style="display: none;">
@@ -618,14 +618,14 @@ BOOTH.do_done = function() {
   </div>
 
   <div id="processing_div" class="panel" style="display:none;">
-      <h3 align="center">Processing....</h3>
+      <h3 align="center">Procesando....</h3>
   </div>
 
   <div id="encrypting_div" class="panel" style="display:none;">
-      <h3 align="center">Helios is now encrypting your ballot<br />
+      <h3 align="center">Helios está encriptando tu papeleta<br />
           <img src="encrypting.gif" /> <span style="font-size:0.7em; display:none;" id="percent_done_container">(<span id="percent_done">0</span>%)</span></h3>
 
-      <p align="center"><b>This may take up to two minutes.</b>
+      <p align="center"><b>Esto puede tardar unos minutos.</b>
   </div>
 
   <div id="seal_div" class="panel">

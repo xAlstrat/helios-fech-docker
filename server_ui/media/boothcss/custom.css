@@ -74,20 +74,20 @@ button.tiny, input.tiny[type=button], a.button.tiny, input.tiny[type=submit]{
     min-width: 100px;
 }
 
-form table{
+form:not(#question_form) table{
     margin: auto;
     padding: 15px 50px;
 }
 
-form table, form table tr {
+form:not(#question_form) table, form:not(#question_form) table tr {
     background-color: #280549 !important;
 }
 
-form table td {
+form:not(#question_form) table td {
     border: none !important;
 }
 
-form table label {
+form:not(#question_form) table label {
     color: white !important;
     font-size: 20px;
 }

@@ -1,33 +1,33 @@
-<h3>Review your Ballot</h3>
+<h3>Revisa tu Voto</h3>
 
 
 <div style="padding: 10px; margin-bottom: 10px; background-color: #eee; border: 1px #ddd solid; max-width: 340px;">
 {#foreach $T.questions as question}
 
-<b>Question #{$T.question$index + 1}: {$T.question.short_name}</b><br>
+<b>Pregunta #{$T.question$index + 1}: {$T.question.short_name}</b><br>
 {#if $T.choices[$T.question$index].length == 0}
-<div style="margin-left: 15px;">&#x2610; <i>No choice selected</i></div>
+<div style="margin-left: 15px;">&#x2610; <i>Ninguna opción seleccionada</i></div>
 {#/if}
 {#foreach $T.choices[$T.question$index] as choice}
 <div style="margin-left: 15px;">&#x2713; {$T.choice.replace(/;/g,'<br/>&nbsp;-&nbsp;')}</div>
 {#/for}
 {#if $T.choices[$T.question$index].length < $T.question.max}
-[you selected {$T.choices[$T.question$index].length} candidates; you may select from {$T.question.min} to {$T.question.max}]
+[seleccionaste {$T.choices[$T.question$index].length} candidatos; debes seleccionar desde {$T.question.min} a {$T.question.max}]
 {#/if}
 <br/>
-    <input type="button" class="btn-small" onclick="BOOTH.show_question({$T.question$index}); return false;" href="#" value="Editar respuesta"></input>
+    <a onclick="BOOTH.show_question({$T.question$index}); return false;" href="#" value="Editar respuesta"></a>
 {#if !$T.question$last}<br><br>{#/if}
 {#/for}
 </div>
 {#if $T.election_metadata.use_advanced_audit_features}
-<div style="background: #CCCCCC;padding: 10px 10px 10px 10px; border: 1px solid #ddd; width:400px;">
-<a onclick="$('#auditbody').slideToggle(250);" href="#"><input type="button" class="btn-small" value="Auditar" /></a>
+<div style="background: #CCCCCC;padding: 10px 10px 10px 10px; border: 1px solid #ddd; width:100%;box-sizing: border-box;">
+<div class="text-right"><a onclick="$('#auditbody').slideToggle(250);" href="#">Auditar (opcional)</a></div>
 <div id="auditbody" style="display:none;">
 <p>
-If you choose, you can audit your ballot and reveal how your choices were encrypted.
+Opcionalmente, puedes verificar y revelar cómo fue encriptado tu voto.
 </p>
 <p>
-You will then be guided to re-encrypt your choices for final casting.
+Serás guiado a re-encriptar tu voto para poder emitirlo.
 </p>
 <input type="button" value="Verificar" onclick="BOOTH.audit_ballot();" class="pretty btn-small" />
 </p>
@@ -36,12 +36,12 @@ You will then be guided to re-encrypt your choices for final casting.
 {#/if}
 
 
-<p><p>Your ballot tracker is <b><tt style="font-size: 11pt;">{$T.encrypted_vote_hash}</tt></b>, and you can <a onclick="BOOTH.show_receipt(); return false;" href="#">print</a> it.<br /><br /></p>
+<p><p>El número de tu papeleta es <b><tt style="font-size: 11pt;">{$T.encrypted_vote_hash}</tt></b>, puedes imprimirlo <a onclick="BOOTH.show_receipt(); return false;" href="#">aquí</a>.<br /><br /></p>
 
 <p>
-Once you click "Submit", the unencrypted version of your ballot will be destroyed, and only the encrypted version will remain.  The encrypted version will be submitted to the Helios server.</p>
+Una vez que haces click en "EMITIR", se eliminará la versión sin cifrar de tu voto y solo quedará la versión cifrada. La versión cifrada se enviará al servidor de Elecciones Fech.</p>
 
-<button id="proceed_button" onclick="BOOTH.cast_ballot();">Submit this Vote!</button><br />
+<button id="proceed_button" onclick="BOOTH.cast_ballot();">Emitir</button><br />
 <div id="loading_div"><img src="loading.gif" id="proceed_loading_img" /></div>
 
 

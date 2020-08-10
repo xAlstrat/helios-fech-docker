@@ -9,19 +9,19 @@
     <div class="question_title_helper"></div>
 </div>
 <br />
-<span style="font-size: 0.6em;">#{$T.question_num + 1} of {$T.last_question_num + 1} &mdash;
- vote for 
+<span style="font-size: 0.6em;">#{$T.question_num + 1} de {$T.last_question_num + 1} &mdash;
+ vota por
 {#if $T.question.min && $T.question.min > 0}
 {#if $T.question.max}
-{$T.question.min} to {$T.question.max}
+{$T.question.min} a {$T.question.max}
 {#else}
-at least {$T.question.min}
+al menos {$T.question.min}
 {#/if}
 {#else}
 {#if $T.question.max}
-{#if $T.question.max > 1}up to {#/if}{$T.question.max}
+{#if $T.question.max > 1}hasta {#/if}{$T.question.max}
 {#else}
-as many as you approve of
+tantas como quieras
 {#/if} 
 {#/if}
 </span>
@@ -56,17 +56,17 @@ as many as you approve of
 
 {#if $T.show_reviewall}
 <div style="float: right;">
-<input type="button" onclick="BOOTH.validate_and_confirm({$T.question_num});" value="Proceed" />
+<input type="button" onclick="BOOTH.validate_and_confirm({$T.question_num});" value="Proceder" />
 </div>
 {#/if}
 
 {#if $T.question_num != 0}
-<input type="button" onclick="BOOTH.previous({$T.question_num})" value="Previous" />
+<input type="button" onclick="BOOTH.previous({$T.question_num})" value="Anterior" />
 &nbsp;
 {#/if}
 
 {#if $T.question_num < $T.last_question_num}
-<input type="button" onclick="BOOTH.next({$T.question_num})" value="Next" />
+<input type="button" onclick="BOOTH.next({$T.question_num})" value="Siguiente" />
 &nbsp;
 {#/if}
 
