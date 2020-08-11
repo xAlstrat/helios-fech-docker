@@ -1,29 +1,30 @@
-Dear {{voter.name}},
+Estimado/a {{voter.name}},
 
 {{custom_message|safe}}
 
-Election URL:  {{election_vote_url}}
-Election Fingerprint:  {{voter.election.hash}}
+URL de la Elección:  {{election_vote_url}}
+Huella de la Elección:  {{voter.election.hash}}
 {% ifequal voter.voter_type "password" %}
-Your voter ID: {{voter.voter_login_id}}
-Your password: {{voter.voter_password}}
+Tu ID de votante: {{voter.voter_login_id}}
+Tu contraseña: {{voter.voter_password}}
 {% else %}
-Log in with your {{voter.voter_type}} account.
+Inicia sesión con tu cuenta {{voter.voter_type}}.
 {% endifequal %}{% if voter.vote_hash %}
-We have recorded your vote with smart tracker:
+Hemos guardado tu voto con el rastreador inteligente:
 
   {{voter.vote_hash}}
 
-You may re-vote if you wish: only your last vote counts.
+Puedes volver a votar si lo deseas: solo tu último voto será considerado.
 {% endif %}{% if election.use_voter_aliases %}
-In order to protect your privacy, this election is configured
-to never display your voter login ID, name, or email address to the public.
-Instead, the ballot tracking center will only display your alias.
+Para proteger tu privacidad, esta elección está configurada
+para nunca mostrar tu ID de votante, nombre, o dirección e-mail al público.
+En vez de eso, el Centro de Seguimiento de Papeletas solo utiliza tu nombre de alias.
 
-Your voter alias is {{voter.alias}}.
+Tu nombre de alias es: {{voter.alias}}.
 
-IMPORTANTLY, when you are prompted to log in to vote,
-please use your *voter ID*, not your alias.
+IMPORTANTE, cuando se te solicite iniciar sesión para votar
+por favor utiliza tu *ID de votante*, no tu nombre de alias.
 {% endif %}
 --
+Elecciones FECh 2020
 Helios

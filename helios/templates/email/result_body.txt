@@ -1,19 +1,20 @@
-Dear {{voter.name}},
+Estimado/a {{voter.name}},
 
-The tally for {{election.name}} has been computed and released:
+Los resultados de la elección {{election.name}} han sido calculados y publicados:
 
   {{election_url}}
 
 {{custom_message|safe}}
 
-{% if voter.vote_hash %}Your smart ballot tracker in this election was:
+{% if voter.vote_hash %}Tu rastreador inteligente de papeleta en esta elección fue:
 
   {{voter.vote_hash}}
 
-If you believe this tracker to be in error, please contact us.
+Si crees que este rastreador es erróneo, por favor contáctanos.
 {% else %}
-It appears you did not cast a vote in this election.
-Please contact us if you believe you did.
+No tenemos registro de que hayas votado en esta elección.
+Por favor contáctanos si crees que lo hiciste.
 {% endif %}
 --
+Elecciones FECh 2020
 Helios

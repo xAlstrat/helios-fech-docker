@@ -1,8 +1,9 @@
-Dear {{voter.name}},
+Estimado/a {{voter.name}},
 
 {{custom_message|safe}}
 
-Election Link: {{election_vote_url}}
+URL de la Elección: {{election_vote_url}}
 
 --
+Elecciones FECh 2020
 Helios
