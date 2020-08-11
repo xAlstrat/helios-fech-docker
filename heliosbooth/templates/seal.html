@@ -9,7 +9,7 @@
 <div style="margin-left: 15px;">&#x2610; <i>Ninguna opción seleccionada</i></div>
 {#/if}
 {#foreach $T.choices[$T.question$index] as choice}
-<div style="margin-left: 15px;">&#x2713; {$T.choice.replace(/;/g,'<br/>&nbsp;-&nbsp;')}</div>
+<div style="margin-left: 15px;">&#x2713; {$T.choice.replace(/;/g,'<br/>&nbsp;-&nbsp;').replace(':', '')}</div>
 {#/for}
 {#if $T.choices[$T.question$index].length < $T.question.max}
 [seleccionaste {$T.choices[$T.question$index].length} candidatos; debes seleccionar desde {$T.question.min} a {$T.question.max}]

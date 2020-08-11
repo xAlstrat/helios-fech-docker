@@ -123,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #question_div div[id*=answer_label] {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     font-family: sans-pro-reg !important;
 }
 
