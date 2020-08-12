@@ -32,8 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #logo-container {
-    margin-left: 100px !important;
-    width: 1000px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -55,6 +54,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #content{
     border: none !important;
+    background: url("../img/Background.jpg") repeat;
+    padding: 40px 60px;
 }
 
 #content button, #content input[type=button], #content input[type=submit]{
@@ -71,6 +72,12 @@ h1, h2, h3, h4, h5, h6 {
 #content button.btn-small, #content input.btn-small[type=button], #content input.btn-small[type=submit]{
     font-size: 14px !important;
     padding: 5px 10px !important;
+}
+
+#page {
+    background: white;
+    border: 2px solid #280549;
+    padding: 30px;
 }
 
 #footer{
@@ -154,4 +161,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-right {
     text-align: right !important;
+}
+
+.text-center{
+    text-align: center !important;
 }

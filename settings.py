@@ -201,7 +201,7 @@ FOOTER_LOGO_URL = get_from_env('FOOTER_LOGO_URL', None)
 
 WELCOME_MESSAGE = get_from_env('WELCOME_MESSAGE', "This is the default message")
 
-HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'help@heliosvoting.org')
+HELP_EMAIL_ADDRESS = get_from_env('HELP_EMAIL_ADDRESS', 'tricelfech@gmail.com')
 
 AUTH_TEMPLATE_BASE = "server_ui/templates/base.html"
 HELIOS_TEMPLATE_BASE = "server_ui/templates/base.html"
