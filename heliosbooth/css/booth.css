@@ -113,7 +113,7 @@ h3 {
 
 .answer_group {
   padding: 5px;
-  min-height: 210px !important;
+  min-height: 280px !important;
 }
 
 /*Simple grid*/
@@ -147,7 +147,7 @@ h3 {
 
 @media (min-width: 992px) {
   .col {
-      width: 33.33333333%;
+      width: 50%;
   }
 }
 
