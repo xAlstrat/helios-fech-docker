@@ -4,7 +4,7 @@ celery==4.2.1
 django-anymail==7.0.0
 django-picklefield==0.3.0
 kombu==4.2.0
-html5lib==0.999
+html5lib==0.999999999
 psycopg2==2.7.3.2
 pyparsing==1.5.7
 python-dateutil>=1.5
